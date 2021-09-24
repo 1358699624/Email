@@ -1,0 +1,38 @@
+{
+  "exclude": [
+    "**/bin",
+    "**/bower_components",
+    "**/jspm_packages",
+    "**/node_modules",
+    "**/obj",
+    "**/platforms"
+  ],
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft": "Warning",
+      "Microsoft.Hosting.Lifetime": "Information"
+    }
+  },
+  "ConnectionStrings": {
+    "YX": "1445793011@qq.com"
+  },
+  "AllowedHosts": "*",
+  "ServiceUrl": "http://www.cnblogs.com/chuankang/"
+}
+
+
+//AppConfigurtaionServices.Configuration["ServiceUrl"];
+//得到 http://www.cnblogs.com/chuankang/
+
+
+
+//AppConfigurtaionServices.Configuration["ConnectionStrings:YX"];
+//得到"1445793011@qq.com"
+
+  //AppConfigurtaionServices.Configuration["ConnectionStrings:LogLevel"];
+/*得到"{
+      "Default": "Information",
+      "Microsoft": "Warning",
+      
+  "Microsoft.Hosting.Lifetime": "Information" }"*/
