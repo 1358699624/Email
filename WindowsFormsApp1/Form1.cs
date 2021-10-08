@@ -5,7 +5,6 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net.Mail;
 using System.Net;
@@ -35,6 +34,7 @@ namespace WindowsFormsApp1
             //var str = " Hellow Word "; 
             //MessageBox.Show($"我的第一个{str.Trim()}！");
         }
+
         private void Form1_SizeChanged(object sender, EventArgs e)
 
         {
@@ -99,6 +99,12 @@ namespace WindowsFormsApp1
 
         }
 
+
+        #region 使用委托，异步 或  多线程
+
+        #endregion
+
+
         private void button2_Click(object sender, EventArgs e)
         {
 
@@ -131,17 +137,29 @@ namespace WindowsFormsApp1
                 //收件人邮箱地址。
 
                 var sjr = cmbyx.Text.Split(';') ;
+
+                for (int i = 0; i < sjr.Length; i++)
+                {
+                    //使用异步
+                    delegate_Emailcom run = new delegate_Emailcom(Emailcom);
+                    IAsyncResult result = run.BeginInvoke(mailMessage, sjr[i], null, null);
+
+                }
+
+                /*
                 for (int i = 0; i < sjr.Length; i++)
                 {
                     Regex r = new Regex("^\\s*([A-Za-z0-9_-]+(\\.\\w+)*@(\\w+\\.)+\\w{2,5})\\s*$");
 
                     if (!r.IsMatch(sjr[i].ToString()))
                     {
-                        textBox3.Text += $"{sjr[i].ToString()}不是邮箱格式"+Environment.NewLine + Environment.NewLine;
+                        textBox3.Text += $"{sjr[i].ToString()}不是邮箱格式" + Environment.NewLine + Environment.NewLine;
                         continue;
                     }
                     mailMessage.To.Add(new MailAddress(sjr[i].ToString()));
                 }
+                */
+
                 //邮件标题。
                 mailMessage.Subject = "QQ邮箱管理员";
                 string verificationcode = createrandom();
@@ -180,6 +198,29 @@ namespace WindowsFormsApp1
             }
 
         }
+
+        private static readonly object SequenceLock = new object();
+        public delegate void  delegate_Emailcom(MailMessage obj, string sjr);
+
+        private void Emailcom(MailMessage obj,string sjr) 
+        {
+            lock (SequenceLock)
+            {
+                    Regex r = new Regex("^\\s*([A-Za-z0-9_-]+(\\.\\w+)*@(\\w+\\.)+\\w{2,5})\\s*$");
+
+                    if (!r.IsMatch(sjr))
+                    {
+                        textBox3.Text += $"{sjr}不是邮箱格式" + Environment.NewLine + Environment.NewLine;
+                    }
+                    else
+                    {
+                    obj.To.Add(new MailAddress(sjr.ToString()));
+                   }
+                    
+            }
+        }
+
+
         //生成6位数字和大写字母的验证码
         private string createrandom()
         {
@@ -256,6 +297,12 @@ namespace WindowsFormsApp1
         }
         #endregion
 
+
+        /// <summary>
+        /// 超链接
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             string url = "https://zhidao.baidu.com/question/1608648715083706787.html";
