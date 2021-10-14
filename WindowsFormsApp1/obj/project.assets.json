@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {
+    "net6.0-windows7.0": {
       "Microsoft.Extensions.Configuration/5.0.0": {
         "type": "package",
         "dependencies": {
@@ -49,8 +49,7 @@
           "Microsoft.Extensions.Configuration": "5.0.0",
           "Microsoft.Extensions.Configuration.Abstractions": "5.0.0",
           "Microsoft.Extensions.Configuration.FileExtensions": "5.0.0",
-          "Microsoft.Extensions.FileProviders.Abstractions": "5.0.0",
-          "System.Text.Json": "5.0.0"
+          "Microsoft.Extensions.FileProviders.Abstractions": "5.0.0"
         },
         "compile": {
           "lib/netstandard2.1/Microsoft.Extensions.Configuration.Json.dll": {}
@@ -101,15 +100,6 @@
         },
         "runtime": {
           "lib/netcoreapp3.0/Microsoft.Extensions.Primitives.dll": {}
-        }
-      },
-      "System.Text.Json/5.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp3.0/System.Text.Json.dll": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/System.Text.Json.dll": {}
         }
       }
     }
@@ -278,67 +268,45 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
-    },
-    "System.Text.Json/5.0.0": {
-      "sha512": "+luxMQNZ2WqeffBU7Ml6njIvxc8169NW2oU+ygNudXQGZiarjE7DOtN7bILiQjTZjkmwwRZGTtLzmdrSI/Ustw==",
-      "type": "package",
-      "path": "system.text.json/5.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/net461/System.Text.Json.dll",
-        "lib/net461/System.Text.Json.xml",
-        "lib/netcoreapp3.0/System.Text.Json.dll",
-        "lib/netcoreapp3.0/System.Text.Json.xml",
-        "lib/netstandard2.0/System.Text.Json.dll",
-        "lib/netstandard2.0/System.Text.Json.xml",
-        "system.text.json.5.0.0.nupkg.sha512",
-        "system.text.json.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-      ]
     }
   },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": [
+    "net6.0-windows7.0": [
       "Microsoft.Extensions.Configuration >= 5.0.0",
       "Microsoft.Extensions.Configuration.Json >= 5.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\马连军\\.nuget\\packages\\": {},
+    "C:\\Users\\m\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\.Net Core\\Email\\WindowsFormsApp1\\EmailSend.csproj",
+      "projectUniqueName": "D:\\VS2022\\EmailWinform\\WindowsFormsApp1\\EmailSend.csproj",
       "projectName": "EmailSend",
-      "projectPath": "E:\\.Net Core\\Email\\WindowsFormsApp1\\EmailSend.csproj",
-      "packagesPath": "C:\\Users\\马连军\\.nuget\\packages\\",
-      "outputPath": "E:\\.Net Core\\Email\\WindowsFormsApp1\\obj\\",
+      "projectPath": "D:\\VS2022\\EmailWinform\\WindowsFormsApp1\\EmailSend.csproj",
+      "packagesPath": "C:\\Users\\m\\.nuget\\packages\\",
+      "outputPath": "D:\\VS2022\\EmailWinform\\WindowsFormsApp1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\马连军\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\m\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "netcoreapp3.1"
+        "net6.0-windows7.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
+        "net6.0-windows7.0": {
+          "targetAlias": "net6.0-windows",
           "projectReferences": {}
         }
       },
@@ -349,8 +317,8 @@
       }
     },
     "frameworks": {
-      "netcoreapp3.1": {
-        "targetAlias": "netcoreapp3.1",
+      "net6.0-windows7.0": {
+        "targetAlias": "net6.0-windows",
         "dependencies": {
           "Microsoft.Extensions.Configuration": {
             "target": "Package",
@@ -379,7 +347,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-preview.7.21379.14\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

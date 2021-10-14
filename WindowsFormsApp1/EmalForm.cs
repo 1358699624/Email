@@ -10,7 +10,7 @@ using System.Net.Mail;
 using System.Net;
 using System.IO;
 using System.Net.Mime;
-using DevExpress.Utils;
+//using DevExpress.Utils;
 using System.Threading;
 
 using Microsoft.Extensions.Configuration;
@@ -21,9 +21,9 @@ using System.Diagnostics;
 
 namespace WindowsFormsApp1
 {
-    public partial class Form1 : Form
+    public partial class EmalForm : Form
     {
-        public Form1()
+        public EmalForm()
         {
             
             InitializeComponent();
@@ -248,14 +248,14 @@ namespace WindowsFormsApp1
 
         private void btnLoding_Click(object sender, EventArgs e)
         {
-            using (WaitDialogForm dlg = new WaitDialogForm("请等待...", "正在发送...", new Size(250, 70), ParentForm))
-            {
+            //using (WaitDialogForm dlg = new WaitDialogForm("请等待...", "正在发送...", new Size(250, 70), ParentForm))
+            //{
                 for (int i = 0; i < 1000; i++)
                 {
                     Application.DoEvents();
                     button2_Click(null,null);
                 }
-            }
+            //}
         }
 
         private void menuItem_Show_Click(object sender, EventArgs e)
